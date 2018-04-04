@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movietime_app/ui/HomePageMainBody.dart';
 import 'package:movietime_app/ui/HomePageTopBar.dart';
 
 void main() => runApp(new MovieTimeHomePage());
@@ -25,7 +26,13 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new HomePageTopBar("Cinema"),
+      body: new Column(
+        verticalDirection: VerticalDirection.down,
+        children: <Widget>[
+          new HomePageTopBar("Cinema"),
+          new Expanded(child: new HomePageMainBody()),
+        ],
+      )
     );
   }
 }
